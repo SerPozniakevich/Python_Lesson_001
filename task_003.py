@@ -2,5 +2,7 @@
 
 a = int(input('Введите число: '))
 list_num = range(-a, a + 1)
+s = ' ' # переменная для вывода в одну строку
 for i in list_num:
-    print(i)
+    s = s + ' ' + str(i) + ","  # подготовка к выводу одной строки
+print(s)
