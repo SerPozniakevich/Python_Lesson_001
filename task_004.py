@@ -13,10 +13,17 @@ from unittest import result
 
 #Var 2
 
+# a = float(input('Введите десятичную дробь: '))
+# a = int(a * 10)
+# result = a % 10
+# if result == 0:
+#     print('NO')
+# else:
+#     print(result)
+
+# Var 3
+
 a = float(input('Введите десятичную дробь: '))
-a = int(a * 10)
-result = a % 10
-if result == 0:
-    print('NO')
-else:
-    print(result)
+a = int((a * 10) % 10)
+
+print(a)
