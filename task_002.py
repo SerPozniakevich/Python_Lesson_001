@@ -10,6 +10,6 @@
 # print(max_number)
 
 # Var 2
-# list_entered = input('Введите ряд чисел через пробел: ').split() # split разбивает список по пробелам
-# list_number = list(map(int, list_entered)) # "map" - приводит в соответствие вида, например в "int"
-# print(max(list_number)) # max - внутр.функция питон, вывод максимального значения списка/строки
+list_entered = input('Введите ряд чисел через пробел: ').split() # split разбивает список по пробелам
+list_number = list(map(int, list_entered)) # "map" - приводит в соответствие вида, например в "int"
+print(max(list_number)) # max - внутр.функция питон, вывод максимального значения списка/строки
