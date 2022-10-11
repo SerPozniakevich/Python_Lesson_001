@@ -245,13 +245,82 @@ import datetime
 
 # Найти наименьшее общее кратное.
 
-a, b = map(int,input('Введите значения a и b через пробел: ' ).split())
-nod = 2
-while True:
-    if a % nod == 0 and b % nod == 0:
-        break
-    else:
-        nod += 1
+# a, b = map(int,input('Введите значения a и b через пробел: ' ).split())
+# nod = 2
+# while True:
+#     if a % nod == 0 and b % nod == 0:
+#         break
+#     else:
+#         nod += 1
 
-nok = int(a * b / nod)
-print(f' nod: {nod}, nok: {nok}')
+# nok = int(a * b / nod)
+# print(f' nod: {nod}, nok: {nok}')
+
+# LESSON 5 ALBINA
+#_____________________________________________________
+
+from collections import Counter
+from unittest import result
+
+import numpy
+
+# items = numpy.random.randint(10, size = 10) # Параметр для заполнения списка рандомными числами
+# items_set = list(items[: 10]) # Создание списка
+# print(*items_set) # Печать со звёздочкой убирает квадратные скобки и запятые
+
+# dict_new = Counter(items_set) # Counter проверяет количество повторений в списке
+# res_list = [i for i in dict_new if dict_new[i] == 1] # сокращённое написание цикла ниже
+# # res_list = []
+# # for i in dict_new:
+# #     if dict_new[i] == 1:
+# #         res_list.append(i) # Заполняем список числами, которые не имеют повторений (были 1 раз)
+
+# print(*res_list)
+
+# В файле находится N натуральных чисел, записанных через пробел.
+# Среди чисел не хватает одного, чтобы выполнять условие A[i] - 1 = A[i - 1]. Найдите это число.
+#----------------------------------------------------------------------------------------------
+# patch = r'C:\Users\User\Documents\Geekbrains\Python\Lesson01\file.task.txt' # создание пути к файлу
+# # patch = 'C:\\Users\\User\\Documents\\Geekbrains\\Python\\Lesson01\\file.task.txt' # создание пути к файлу
+# data = open(patch, 'r') # открытие в режиме чтения
+# for line in data:  # цикл для чтения данных из файла
+#     print(line)
+# data.close() # разрыв связи с файлом
+# line = [int(i) for i in line.split()]
+# print(line)
+
+# for i in range(1, len(line)):
+#     if line[i -1] != line[i] - 1:
+#         num_no = line[i - 1] + 1
+
+# print(num_no)
+
+#Дан список чисел. Создайте список, в который попадают числа описываемые 
+# возрастающую последовательность. Порядок элементнов менять нельзя.
+#-----------------------------------------------------------------------
+
+# input_list = [1, 5, 2, 3, 4, 6, 1, 7]
+# result_list = [input_list[0]]
+# for i in input_list[1:]:  ## проверка с первого элемента до конца списка
+#     if i > result_list[-1]:
+#         result_list.append(i)
+
+# print(*result_list)
+
+
+
+# Напишите программу, удаляющую с текста все слова, содержащие "абв".
+#-----------------------------------------------------------------------
+
+input_text = 'абв проабв разд вобл инжес пабвс'
+
+text_1 = 'абв'
+print(input_text)
+print(text_1)
+real_text = input_text.split()
+result_list = []
+for word in real_text:
+    if text_1 not in word:
+        result_list.append(word)
+
+print(" ".join(result_list))
