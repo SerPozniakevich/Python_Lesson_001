@@ -312,15 +312,42 @@ import numpy
 # Напишите программу, удаляющую с текста все слова, содержащие "абв".
 #-----------------------------------------------------------------------
 
-input_text = 'абв проабв разд вобл инжес пабвс'
+# input_text = 'абв проабв разд вобл инжес пабвс'
 
-text_1 = 'абв'
-print(input_text)
-print(text_1)
-real_text = input_text.split()
-result_list = []
-for word in real_text:
-    if text_1 not in word:
-        result_list.append(word)
+# text_1 = 'абв'
+# print(input_text)
+# print(text_1)
+# real_text = input_text.split()
+# result_list = []
+# for word in real_text:
+#     if text_1 not in word:
+#         result_list.append(word)
 
-print(" ".join(result_list))
+# print(" ".join(result_list))
+
+# Lesson 5 Yury
+#________________________________________________________
+# Напишите программу, удаляющую с текста все слова, содержащие "абв".
+#-----------------------------------------------------------------------
+# input_text = 'абв проабв разд вобл инжес пабвс'
+# new_text = ' '.join(list(filter(lambda w: 'абв' not in w, input_text.split())))
+# print(new_text)
+
+# В файле находится N натуральных чисел, записанных через пробел.
+# Среди чисел не хватает одного, чтобы выполнять условие A[i] - 1 = A[i - 1]. Найдите это число.
+#-----------------------------------------------------------------------------------------------
+
+num = list(map(int, '0 1 2 3 4 5 7 8 9 10'.split(' ')))
+
+#Var I
+#---------------------------
+# for i in range(1, len(num)):
+#     if num[i -1] != num[i] - 1:
+#         num_no = num[i] - 1
+
+# print(num_no)
+
+#Var II
+#---------------------------------------------------------
+
+print([num[i] - 1 for i in range(1, len(num)) if num[i] - 1 != num[i - 1]][0])
