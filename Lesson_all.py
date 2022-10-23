@@ -145,6 +145,7 @@
 
 from datetime import datetime
 from itertools import count
+from string import digits
 from time import time
 
 
@@ -260,9 +261,12 @@ import datetime
 #_____________________________________________________
 
 from collections import Counter
+from unicodedata import digit
 from unittest import result
 
 import numpy
+
+
 
 # items = numpy.random.randint(10, size = 10) # Параметр для заполнения списка рандомными числами
 # items_set = list(items[: 10]) # Создание списка
@@ -337,17 +341,132 @@ import numpy
 # Среди чисел не хватает одного, чтобы выполнять условие A[i] - 1 = A[i - 1]. Найдите это число.
 #-----------------------------------------------------------------------------------------------
 
-num = list(map(int, '0 1 2 3 4 5 7 8 9 10'.split(' ')))
+# num = list(map(int, '0 1 2 3 4 5 7 8 9 10'.split(' ')))
 
-#Var I
-#---------------------------
-# for i in range(1, len(num)):
-#     if num[i -1] != num[i] - 1:
-#         num_no = num[i] - 1
+# #Var I
+# #---------------------------
+# # for i in range(1, len(num)):
+# #     if num[i -1] != num[i] - 1:
+# #         num_no = num[i] - 1
 
-# print(num_no)
+# # print(num_no)
 
-#Var II
-#---------------------------------------------------------
+# #Var II
+# #---------------------------------------------------------
 
-print([num[i] - 1 for i in range(1, len(num)) if num[i] - 1 != num[i - 1]][0])
+# print([num[i] - 1 for i in range(1, len(num)) if num[i] - 1 != num[i - 1]][0])
+
+# LESSON 6 Albina
+#_______________________________________________________________________
+
+# Алгоритм ПОЛЬСКОЙ записи арифметического выражения
+#------------------------------------------------------
+
+
+# input_list = input('Введите выражение: ').split()
+# output = []
+# stack_list = []
+# for elem in input_list:
+#     if elem.isdigit():
+#         output.append(elem)
+#     elif elem == "(": # помещаем в стек (забираем с последнего)
+#         stack_list.append(elem)
+#     elif elem == ")":
+#         while stack_list and stack_list[- 1] != "(":
+#             output.append(stack_list.pop()) # забираем поеследний элемент из стека
+#         if not stack_list:
+#             print('Несогласованные скобки')
+#             exit()
+#         stack_list.pop()
+#     elif elem in ["*", "/"]:
+#         while stack_list and stack_list[- 1] in ["*", "/"]:
+#             output.append(stack_list.pop())
+#         stack_list.append(elem)
+#     elif elem in ["+", "-"]:
+#         while stack_list and stack_list[- 1] in ["*", "/", "+", "-"]:
+#             output.append(stack_list.pop())
+#         stack_list.append(elem)
+#     else:
+#         print('Нераспознанный знак')
+#         exit()
+# while stack_list:
+#     if stack_list[- 1] not in ["*", "/", "+", "-"]:
+#         print('Нераспознанный знак')
+#         exit()
+#     output.append(stack_list.pop())
+# print(output)
+
+# res = []
+
+# for elem in output:
+#     if elem.isdigit():
+#         res.append(int(elem))
+#     else:
+#         b = res.pop()
+#         a = res.pop()
+#         if elem == "+":
+#             res.append(a + b)
+#         elif elem == "-":
+#             res.append(a - b)
+#         elif elem == "*":
+#             res.append(a * b)
+#         elif elem == "/":
+#             res.append(a / b)
+# print(res)
+
+# LESSON 6 Yury
+#_________________________________________________
+
+# Напишите программу вычисления арифметического выражения заданного строкой. 
+# Используйте операции +,-,/,*. приоритет операций стандартный.
+# Пример:
+# 2+2 => 4;
+# 1+2*3 => 7;
+# 1-2*3 => -5;
+
+# mult = '*'
+# div = '/'
+# plus = '+'
+# minus = '-'
+
+# evaluation = '2 + 2 * 2 / 2 - 2'
+# eval_list = evaluation.split()
+# i = 0
+# res = 0
+# while len(eval_list) != 1:
+#     while True:
+#         print(eval_list)
+#         el = eval_list[i]
+#         if el == mult or el == div:
+#             if el == mult:
+#                 res = float(eval_list[i - 1]) * float(eval_list[i + 1])
+#             else:
+#                 res = float(eval_list[i - 1]) / float(eval_list[i + 1])
+#             eval_list[i] = str(res)
+#             eval_list.pop(i + 1)
+#             eval_list.pop(i - 1)
+#             i = 0
+#             if mult and div not in eval_list:
+#                 break
+#         else:
+#             i += 1
+
+
+#     while True:
+#         print(eval_list)       
+#         el = eval_list[i] 
+#         if el == plus or el == minus:
+#             if el == plus:
+#                 res = float(eval_list[i - 1]) + float(eval_list[i + 1])
+#             else:
+#                 res = float(eval_list[i - 1]) - float(eval_list[i + 1])
+#             eval_list[i] = str(res)
+#             eval_list.pop(i + 1)
+#             eval_list.pop(i - 1)
+#             i = 0
+#             if plus and minus not in eval_list:
+#                 break
+#         else:
+#             i += 1
+
+# print(res)
