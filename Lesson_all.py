@@ -1,3 +1,4 @@
+from datetime import datetime
 # LESSON 2
 #____________________________________________________
 # # Подсчёт конкретных символов в строке
@@ -143,7 +144,6 @@
 
 # Var Lesson
 
-from datetime import datetime
 from itertools import count
 from string import digits
 from time import time
@@ -188,7 +188,6 @@ import time
 # LESSON 3 YURIY
 #------------------------------------------------
 
-import datetime
 
 
 # print(datetime.datetime.now().microsecond % 100) #Функция вызова времени для получения псевдорандомного значения
@@ -470,3 +469,8 @@ import numpy
 #             i += 1
 
 # print(res)
+
+# LESSON 007 Yury
+#____________________________________________________________________________
+
+print(f'{datetime.now().strftime("%d.%m.%Y. %H:%M")}')
